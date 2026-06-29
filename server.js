@@ -6,11 +6,13 @@ const UserPasskey = require("./model/userpasskey");
 const Contact = require("./schema");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://asab-web-1.onrender.com"
+}));
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://localhost:27017/ASAB")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
