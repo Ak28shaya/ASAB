@@ -1,9 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const UserPasskey = require("./model/userpasskey");
 const Contact = require("./schema");
+
 
 const app = express();
 app.use(cors({
